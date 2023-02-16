@@ -1,12 +1,24 @@
-import Header from 'components/Header';
+import { ThemeProvider } from "@emotion/react";
+import GlobalStyles from "components/GlobalStyles/GlobalStyles";
+import Header from "components/Header";
 import type { AppProps } from "next/app";
-import "styles/globals.css";
 
-export default function App({ Component, pageProps }: AppProps) {
+const theme = {
+  colors: {
+    primary: '#ff0000'
+  }
+}
+
+function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Header />
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Header isDark />
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }
+
+export default App

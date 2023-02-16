@@ -14,5 +14,6 @@ module.exports = {
     config.resolve.alias['public'] = path.join(__dirname, 'public')
 
     return config
-  }
+  },
+  pageExtensions: ['mdx', 'md', 'jsx', 'js', 'tsx', 'ts']
 }
