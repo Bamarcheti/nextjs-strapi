@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "movie",
+  "info": {
+    "singularName": "movies",
+    "pluralName": "movie",
+    "displayName": "Movies",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Realese_date": {
+      "type": "date"
+    },
+    "Poster": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "actors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::actor.actor",
+      "inversedBy": "movies"
+    }
+  }
+}

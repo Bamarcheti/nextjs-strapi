@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "actors",
+  "info": {
+    "singularName": "actor",
+    "pluralName": "actors",
+    "displayName": "Actors"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "First_name": {
+      "type": "string"
+    },
+    "Last_name": {
+      "type": "string"
+    },
+    "movies": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::movies.movies",
+      "mappedBy": "actors"
+    }
+  }
+}
