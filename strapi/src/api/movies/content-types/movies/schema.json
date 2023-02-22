@@ -12,21 +12,18 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Realese_date": {
+    "realese_date": {
       "type": "date"
     },
-    "Poster": {
+    "poster": {
       "type": "media",
       "multiple": false,
       "required": false,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ]
     },
     "actors": {

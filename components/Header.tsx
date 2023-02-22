@@ -6,7 +6,7 @@ function Header({ isDark }) {
     <HeaderStyled isDark={isDark}>
       <div className="container">
         <div className="logo">
-          <img src="/next.svg" alt="Sites logo" />
+          <img src="/images/logo.svg" alt="Sites logo" />
           <span className="logo-text">Next Movies</span>
         </div>
       </div>

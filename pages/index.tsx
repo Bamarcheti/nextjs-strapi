@@ -1,13 +1,41 @@
-import { Inter } from '@next/font/google';
+import axios from 'axios';
+import Card from 'components/Card';
 
-const inter = Inter({ subsets: ['latin'] })
+type AttributesType = {
+	title: string;
+	poster: File[];
+}
 
-function Home() {
-  return (
-    <div className='container'>
-      <h1>This is our Front Page</h1>
+type Props = {
+	movies: [
+		{
+		  attributes: AttributesType;
+		  id: number
+	  }
+  ]
+}
+
+const Home = ({ movies }: Props) => (
+	console.log(movies),
+	
+    <div>
+			{movies.map(movie => (
+				<Card key={movie.id} movie={movie} />
+			))}
     </ div>
-  )
+)
+
+export async function getServerSideProps() {
+  const { API_URL } = process.env
+
+  const res = await axios.get(`${API_URL}/movie`)
+  const data = res.data.data
+
+  return {
+    props: {
+      movies: data
+    }
+  }
 }
 
 export default Home
