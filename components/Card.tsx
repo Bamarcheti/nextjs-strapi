@@ -1,17 +1,18 @@
 import styled from '@emotion/styled';
 
-function Card ({ movie }: any) {
-  const { API_URL } = process.env
-  
+export const Card = ({ movie }: any) => {
+  const { NEXT_PUBLIC_API_URL } = process.env;
+  const urlImage = `${NEXT_PUBLIC_API_URL}${movie.attributes.poster.data.attributes.url}`;
+    
   return (
     <CardStyled>
       <div className='poster'>
-        <img src={API_URL + movie.poster.url} alt='' />
+        <img src={urlImage} alt='' />
       </div>
 
       <div className='body'>
-        <h3>{movie.title}</h3>
-        <p dangerouslySetInnerHTML={{ __html: movie.description }} />
+        <h3>{movie.attributes.title}</h3>
+        <p dangerouslySetInnerHTML={{ __html: movie.attributes.description }} />
       </div>
     </CardStyled>
   )
@@ -44,5 +45,3 @@ const CardStyled = styled.div`
        
     }
 `
-
-export default Card

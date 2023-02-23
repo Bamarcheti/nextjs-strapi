@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Card from 'components/Card';
+import { Card } from 'components/Card';
 
 type AttributesType = {
 	title: string;
@@ -26,9 +26,9 @@ const Home = ({ movies }: Props) => (
 )
 
 export async function getServerSideProps() {
-  const { API_URL } = process.env
+  const { NEXT_PUBLIC_API_URL } = process.env
 
-  const res = await axios.get(`${API_URL}/movie`)
+  const res = await axios.get(`${NEXT_PUBLIC_API_URL}/api/movie?populate=*`)
   const data = res.data.data
 
   return {

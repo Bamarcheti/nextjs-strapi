@@ -31,6 +31,9 @@
       "relation": "manyToMany",
       "target": "api::actor.actor",
       "inversedBy": "movies"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }

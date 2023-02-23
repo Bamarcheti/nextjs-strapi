@@ -1,7 +1,7 @@
 import styled from "@emotion/styled"
 import { rem } from "polished"
 
-function Header({ isDark }) {
+const Header = ({ isDark }: any) => {
   return (
     <HeaderStyled isDark={isDark}>
       <div className="container">
@@ -14,7 +14,7 @@ function Header({ isDark }) {
   )
 }
 
-const HeaderStyled = styled.header`
+const HeaderStyled = styled.header<any>`
   background: ${props => props.isDark ? '#000' : '#efefef'};
   padding: 20px;
 
